@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html class="no-js" lang="az">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17459837374"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'AW-17459837374');
+    </script>
+
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
@@ -18,10 +28,10 @@
     {{-- PWA/Tile/Favicon --}}
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
-    <link rel="icon" href="{{ asset('assets/img/favicons/favicon.ico') }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/favicons/apple-icon-180x180.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicons/favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/favicons/180x180.png') }}">
     <link rel="manifest" href="{{ asset('assets/manifest.webmanifest') }}">
-    <meta name="msapplication-TileImage" content="{{ asset('assets/img/favicons/ms-icon-144x144.png') }}">
+    <meta name="msapplication-TileImage" content="{{ asset('assets/img/favicons/144x144.png') }}">
 
     {{-- Canonical --}}
     <link rel="canonical" href="{{ url()->current() }}">
@@ -239,7 +249,362 @@
         </button>
     </form>
 </div>
+<div class="th-menu-wrapper">
+    <div class="th-menu-area text-center">
+        <button class="th-menu-toggle">
+            <i class="fal fa-times">
+            </i>
+        </button>
+        <div class="mobile-logo">
+            <a href="{{ route('home') }}">
+                <img alt="No1Kulinariya" src="assets/img/logo.svg"/>
+            </a>
+        </div>
+        <div class="th-mobile-menu">
+            <ul>
+                <li class="">
+                    <a href="{{ route('home') }}">
+                        ANA SƏH&Idot;FƏ
+                    </a>
 
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#">
+                        MENYULAR
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="menu-grid.html">
+                                Menu Grid View
+                            </a>
+                        </li>
+                        <li>
+                            <a href="menu-list.html">
+                                Menu List View
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="about.html">
+                        HAQQIMIZDA
+                    </a>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#">
+                        SƏH&Idot;FƏLƏR
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="menu-item-has-children">
+                            <a href="#">
+                                Ma&gbreve;aza
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="shop.html">
+                                        Ma&gbreve;aza
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="shop-details.html">
+                                        Ma&gbreve;aza Details
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="cart.html">
+                                        Səbət Səhifəsi
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="checkout.html">
+                                        &Ouml;dəni&scedil;
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="wishlist.html">
+                                        Se&ccedil;ilənlər
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="reservation.html">
+                                Reservation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="team.html">
+                                A&scedil;pazlar&inodot;m&inodot;z
+                            </a>
+                        </li>
+                        <li>
+                            <a href="team-details.html">
+                                A&scedil;paz Detallar&inodot;
+                            </a>
+                        </li>
+                        <li>
+                            <a href="gallery.html">
+                                Qalereya
+                            </a>
+                        </li>
+                        <li>
+                            <a href="faq.html">
+                                Suallar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="testimonials.html">
+                                Rəylər
+                            </a>
+                        </li>
+                        <li>
+                            <a href="error.html">
+                                Səhifə Tap&inodot;lmad&inodot;
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="contact.html">
+                        Faydalı Məlumatlar
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html">
+                        ƏLAQƏ
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<header class="th-header header-default">
+    <div class="header-top d-sm-block d-none">
+        <div class="container">
+            <div class="row justify-content-center justify-content-lg-between align-items-center gy-2">
+                <div class="col-auto">
+                    <div class="header-links">
+                        <ul>
+                            <li class="d-none d-xl-inline-block">
+                                <i class="far fa-location-dot">
+                                </i>
+                                28 May M/S Rus Plovoslar kilsəsinin yanı
+                            </li>
+                            <li class="d-none d-md-inline-block">
+                                <i class="far fa-envelope-open">
+                                </i>
+                                <a href="mailto:info@no1kulinariya.com">
+                                    info@no1kulinariya.com
+                                </a>
+                            </li>
+                            <li class="d-none d-sm-inline-block">
+                                <i class="far fa-clock">
+                                </i>
+                                &Idot;&scedil; saatlar&inodot;: Hər Gün 09:00 - 22:00
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <div class="header-links">
+                        <ul>
+                            <li class="d-none d-xxl-inline-block header-contact">
+                                <i class="far fa-phone">
+                                </i>
+                                <a href="tel:994559711197">
+                                    +994 55 971 11 97
+                                </a>
+                            </li>
+                            <li>
+                                <div class="th-social">
+                                    <a href="https://www.facebook.com/">
+                                        <i class="fab fa-facebook-f">
+                                        </i>
+                                    </a>
+                                    <a href="https://www.twitter.com/">
+                                        <i class="fab fa-tiktok">
+                                        </i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/">
+                                        <i class="fab fa-instagram">
+                                        </i>
+                                    </a>
+                                    <a href="https://www.whatsapp.com/">
+                                        <i class="fab fa-whatsapp">
+                                        </i>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sticky-wrapper">
+        <div class="menu-area">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-auto">
+                        <div class="header-logo">
+                            <a href="index-2.html">
+                                <img alt="No1Kulinariya" src="assets/img/logo.svg"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <nav class="main-menu d-none d-lg-inline-block">
+                            <ul>
+                                <li class="{{ route('home') }}">
+                                    <a href="index-2.html">
+                                        ANA SƏH&Idot;FƏ
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="about.html">
+                                        HAQQIMIZDA
+                                    </a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="#">
+                                        MENYU
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="menu-grid.html">
+                                                Menu grid
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="menu-list.html">
+                                                Menu List
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="#">
+                                        Reseptlər
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item-has-children">
+                                            <a href="#">
+                                                Ma&gbreve;aza
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <a href="shop.html">
+                                                        Ma&gbreve;aza
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop-details.html">
+                                                        Ma&gbreve;aza Details
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="cart.html">
+                                                        Səbət Səhifəsi
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="checkout.html">
+                                                        &Ouml;dəni&scedil;
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="wishlist.html">
+                                                        Se&ccedil;ilənlər
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="reservation.html">
+                                                Reservation
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="team.html">
+                                                A&scedil;pazlar&inodot;m&inodot;z
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="team-details.html">
+                                                A&scedil;paz Detallar&inodot;
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="gallery.html">
+                                                Qalereya
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="testimonials.html">
+                                                Rəylər
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="faq.html">
+                                                Suallar
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="error.html">
+                                                Səhifə Tap&inodot;lmad&inodot;
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="contact.html">
+                                        Faydalı Məlumatlar
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="contact.html">
+                                        ƏLAQƏ
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="header-button d-flex d-lg-none">
+                            <button class="icon-btn sideMenuToggler" type="button">
+          <span class="badge">
+           5
+          </span>
+                                <i class="fa-regular fa-cart-shopping">
+                                </i>
+                            </button>
+                            <button class="icon-btn th-menu-toggle" type="button">
+                                <i class="far fa-bars">
+                                </i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-auto d-none d-xl-block">
+                        <div class="header-button">
+                            <button class="icon-btn searchBoxToggler" type="button">
+                                <i class="far fa-search">
+                                </i>
+                            </button>
+                            <button class="icon-btn sideMenuToggler" type="button">
+          <span class="badge">
+           5
+          </span>
+                                <i class="fa-regular fa-cart-shopping">
+                                </i>
+                            </button>
+                            <a class="th-btn btn-mask" href="reservation.html">
+                                isti-isti sifariş et
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
 
 
