@@ -13,6 +13,9 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         //
     })
+    ->withCommands([
+        App\Console\Commands\ScrapeRecipes::class,
+    ])
     ->withExceptions(function (Exceptions $exceptions): void {
         //
     })->create();

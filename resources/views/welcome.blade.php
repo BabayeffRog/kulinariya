@@ -46,7 +46,7 @@
         <span class="sub-title gsap-scale-down-fade">
          No1 Kulinariya
         </span>
-                        <h1 class="hero-title text-anime-style-2" style="color:#854f37;">Ad Bizim Dad Sizin!</h1>
+                        <h1 class="hero-title text-anime-style-2" style="color:#11A1AD;">Ad Bizim Dad Sizin!</h1>
                         <div class="hero-img1 gsap-scale-up-fade">
                             <img alt="Image" src="assets/img/hero/hero-img.png"/>
                         </div>
@@ -74,15 +74,16 @@
         <div class="slider-area">
             <div class="swiper th-slider" data-slider-options='{"autoplay":true,"loop":true,"breakpoints":{"0":{"slidesPerView":1},"400":{"slidesPerView":"2"},"768":{"slidesPerView":"3"},"992":{"slidesPerView":"4"},"1200":{"slidesPerView":"5"},"1400":{"slidesPerView":"6"}}}' id="catSlider1">
                 <div class="swiper-wrapper">
+                    @foreach($categories AS $cate)
                     <div class="swiper-slide">
                         <div class="category-card">
                             <img alt="img" class="cat-i-bottom" src="assets/img/icon/cat-1-bottom.png"/>
                             <div class="box-icon">
-                                <img alt="Image" src="assets/img/category/category_1-1.png"/>
+                                <img alt="{{ $cate->name }}" src="{{ asset('storage/' . $cate->image) }}"/>
                             </div>
                             <h3 class="box-title">
                                 <a href="shop.html">
-                                    Domino Pitsa
+                                    {{ $cate->name }}
                                 </a>
                             </h3>
                             <p class="box-subtitle">
@@ -90,150 +91,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="category-card">
-                            <img alt="img" class="cat-i-bottom" src="assets/img/icon/cat-1-bottom.png"/>
-                            <div class="box-icon">
-                                <img alt="Image" src="assets/img/category/category_1-2.png"/>
-                            </div>
-                            <h3 class="box-title">
-                                <a href="shop.html">
-                                    Qrildə Toyuq
-                                </a>
-                            </h3>
-                            <p class="box-subtitle">
-                                22 məhsul m&ouml;vcuddur
-                            </p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="category-card">
-                            <img alt="img" class="cat-i-bottom" src="assets/img/icon/cat-1-bottom.png"/>
-                            <div class="box-icon">
-                                <img alt="Image" src="assets/img/category/category_1-3.png"/>
-                            </div>
-                            <h3 class="box-title">
-                                <a href="{{ route('home') }}">
-                                    Ləzzətli Burger
-                                </a>
-                            </h3>
-                            <p class="box-subtitle">
-                                23 məhsul m&ouml;vcuddur
-                            </p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="category-card">
-                            <img alt="img" class="cat-i-bottom" src="assets/img/icon/cat-1-bottom.png"/>
-                            <div class="box-icon">
-                                <img alt="Image" src="assets/img/category/category_1-4.png"/>
-                            </div>
-                            <h3 class="box-title">
-                                <a href="shop.html">
-                                    Qutu Menyular
-                                </a>
-                            </h3>
-                            <p class="box-subtitle">
-                                22 məhsul m&ouml;vcuddur
-                            </p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="category-card">
-                            <img alt="img" class="cat-i-bottom" src="assets/img/icon/cat-1-bottom.png"/>
-                            <div class="box-icon">
-                                <img alt="Image" src="assets/img/category/category_1-5.png"/>
-                            </div>
-                            <h3 class="box-title">
-                                <a href="{{ route('home') }}">
-                                    Combo yeməklərimiz
-                                </a>
-                            </h3>
-                            <p class="box-subtitle">
-                                20 məhsul m&ouml;vcuddur
-                            </p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="category-card">
-                            <img alt="img" class="cat-i-bottom" src="assets/img/icon/cat-1-bottom.png"/>
-                            <div class="box-icon">
-                                <img alt="Image" src="assets/img/category/category_1-1.png"/>
-                            </div>
-                            <h3 class="box-title">
-                                <a href="{{ route('home') }}">
-                                    Domino Pitsa
-                                </a>
-                            </h3>
-                            <p class="box-subtitle">
-                                25 məhsul m&ouml;vcuddur
-                            </p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="category-card">
-                            <img alt="img" class="cat-i-bottom" src="assets/img/icon/cat-1-bottom.png"/>
-                            <div class="box-icon">
-                                <img alt="Image" src="assets/img/category/category_1-2.png"/>
-                            </div>
-                            <h3 class="box-title">
-                                <a href="{{ route('home') }}">
-                                    Qrildə Toyuq
-                                </a>
-                            </h3>
-                            <p class="box-subtitle">
-                                22 məhsul m&ouml;vcuddur
-                            </p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="category-card">
-                            <img alt="img" class="cat-i-bottom" src="assets/img/icon/cat-1-bottom.png"/>
-                            <div class="box-icon">
-                                <img alt="Image" src="assets/img/category/category_1-3.png"/>
-                            </div>
-                            <h3 class="box-title">
-                                <a href="{{ route('home') }}">
-                                    Ləzzətli Burger
-                                </a>
-                            </h3>
-                            <p class="box-subtitle">
-                                23 məhsul m&ouml;vcuddur
-                            </p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="category-card">
-                            <img alt="img" class="cat-i-bottom" src="assets/img/icon/cat-1-bottom.png"/>
-                            <div class="box-icon">
-                                <img alt="Image" src="assets/img/category/category_1-4.png"/>
-                            </div>
-                            <h3 class="box-title">
-                                <a href="{{ route('home') }}">
-                                    Qutu Menyular
-                                </a>
-                            </h3>
-                            <p class="box-subtitle">
-                                22 məhsul m&ouml;vcuddur
-                            </p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="category-card">
-                            <img alt="img" class="cat-i-bottom" src="assets/img/icon/cat-1-bottom.png"/>
-                            <div class="box-icon">
-                                <img alt="Image" src="assets/img/category/category_1-5.png"/>
-                            </div>
-                            <h3 class="box-title">
-                                <a href="{{ route('home') }}">
-                                    Combo yeməklərimiz
-                                </a>
-                            </h3>
-                            <p class="box-subtitle">
-                                20 məhsul m&ouml;vcuddur
-                            </p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <button class="slider-arrow slider-prev" data-slider-prev="#catSlider1">
@@ -1135,175 +993,6 @@
         </div>
     </div>
 </div>
-<section class="coming-soon-sec-1 bg-theme3 overflow-hidden">
-    <img alt="img" class="round-shape-top" src="assets/img/shape/shape-top-smoke.png"/>
-    <div class="container">
-        <div class="row gy-40 align-items-center">
-            <div class="col-xl-4 col-lg-4">
-                <div class="coming-left">
-                    <img alt="img" src="assets/img/coming/coming-left-1.png"/>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4">
-                <div class="coming-soon">
-                    <h5 class="coming-top-title text-anime-style-2">
-                        endirim
-                        <span>
-         50%
-        </span>
-                        qədər
-                    </h5>
-                    <h2 class="coming-middle-title text-anime-style-1">
-        <span>
-         Super
-        </span>
-                        Ləzzətli
-                    </h2>
-                    <h2 class="coming-title text-anime-style-1">
-                        Burger
-                    </h2>
-                    <div class="upcoming-counter-wrap">
-                        <p class="box-text wow fadeinleft" data-wow-delay=".3s">
-                            Məhdud m&uuml;ddətli təklif
-                        </p>
-                        <ul class="upcoming-counter counter-list" data-offer-date="07/03/2029">
-                            <li class="wow fadeinup" data-wow-delay=".4s">
-                                <div class="day count-number">
-                                    00
-                                </div>
-                                <span class="count-name">
-           G&uuml;n
-          </span>
-                            </li>
-                            <li class="wow fadeinup" data-wow-delay=".5s">
-                                <div class="hour count-number">
-                                    00
-                                </div>
-                                <span class="count-name">
-           Saat
-          </span>
-                            </li>
-                            <li class="wow fadeinup" data-wow-delay=".6s">
-                                <div class="minute count-number">
-                                    00
-                                </div>
-                                <span class="count-name">
-           Dəqiqə
-          </span>
-                            </li>
-                            <li class="wow fadeinup" data-wow-delay=".7s">
-                                <div class="seconds count-number">
-                                    00
-                                </div>
-                                <span class="count-name">
-           Saniyə
-          </span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4">
-                <div class="coming-right wow fadeinright">
-                    <img alt="img" src="assets/img/coming/coming-right.png"/>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="testi-area-1 space-bottom overflow-hidden" id="testi-sec">
-    <div class="shape-mockup d-none d-xxl-block jump-reverse" style="top: 2%; left: 0%;">
-        <img alt="img" src="assets/img/icon/hero-1-3.png"/>
-    </div>
-    <div class="shape-mockup d-none d-xxl-block jump" style="top: 10%; right: 0%;">
-        <img alt="img" src="assets/img/icon/testi-top-1-1.png"/>
-    </div>
-    <div class="shape-mockup d-none d-xxl-block jump" style="bottom: 2%; left: 0%;">
-        <img alt="img" src="assets/img/icon/testi-top-1-2.png"/>
-    </div>
-    <div class="container">
-        <div class="title-area text-center mb-60">
-     <span class="sub-title text-anime-style-1">
-      Rəylər
-     </span>
-            <h2 class="sec-title text-anime-style-2">
-                M&uuml;&scedil;təri
-                <span class="text-theme">
-       rəyləri
-      </span>
-            </h2>
-            <img alt="img" class="img-anime-style-1" src="assets/img/icon/title-shape.png"/>
-        </div>
-        <div class="row gy-40 gx-30">
-            <div class="col-xl-6">
-                <div class="testi-1-item wow fadeinleft" data-wow-delay=".3s">
-                    <div class="client-thumb">
-                        <img alt="img" src="assets/img/testimonial/testi-1-1.png"/>
-                    </div>
-                    <div class="content">
-                        <img alt="icon" class="testi-1-quote" src="assets/img/icon/testi-1-quote.png"/>
-                        <p class="box-text">
-                            &ldquo;Hər pitsa hər g&uuml;n təzə yo&gbreve;rulan xəmirdən ba&scedil;lay&inodot;r; &uuml;zərinə yeti&scedil;mi&scedil; pomidorlardan və gizli ot qar&inodot;&scedil;&inodot;&gbreve;&inodot;m&inodot;zdan haz&inodot;rlanan imza sousu &ccedil;əkilir.&rdquo;
-                        </p>
-                    </div>
-                    <div class="bottom">
-                        <h4 class="box-title">
-                            Victoria Wotton
-                        </h4>
-                        <p>
-                            Fementum Odio Co.
-                        </p>
-                        <div class="th-social">
-                            <i class="fa-solid fa-star">
-                            </i>
-                            <i class="fa-solid fa-star">
-                            </i>
-                            <i class="fa-solid fa-star">
-                            </i>
-                            <i class="fa-solid fa-star">
-                            </i>
-                            <i class="fa-solid fa-star">
-                            </i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6">
-                <div class="testi-1-item wow fadeinright" data-wow-delay=".3s">
-                    <div class="client-thumb">
-                        <img alt="img" src="assets/img/testimonial/testi-1-2.png"/>
-                    </div>
-                    <div class="content">
-                        <img alt="icon" class="testi-1-quote" src="assets/img/icon/testi-1-quote.png"/>
-                        <p class="box-text">
-                            &ldquo;Hər pitsan&inodot;n əsas&inodot; təzə yo&gbreve;rulmu&scedil; xəmirdir; &uuml;st&uuml;nə &scedil;irəli pomidorlardan və x&uuml;susi ot reseptimizdən haz&inodot;rlanan ev sousu əlavə olunur.&rdquo;
-                        </p>
-                    </div>
-                    <div class="bottom">
-                        <h4 class="box-title">
-                            Emma Mia
-                        </h4>
-                        <p>
-                            Fementum Odio Co.
-                        </p>
-                        <div class="th-social">
-                            <i class="fa-solid fa-star">
-                            </i>
-                            <i class="fa-solid fa-star">
-                            </i>
-                            <i class="fa-solid fa-star">
-                            </i>
-                            <i class="fa-solid fa-star">
-                            </i>
-                            <i class="fa-solid fa-star">
-                            </i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <section class="space bg-smoke overflow-hidden" id="blog-sec">
     <div class="shape-mockup d-none d-xxl-block jump-reverse" style="top: 3%; left: 2%;">
         <img alt="img" src="assets/img/icon/blog-1-1.png"/>
