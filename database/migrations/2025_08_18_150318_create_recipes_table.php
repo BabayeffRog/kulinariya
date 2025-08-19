@@ -15,15 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
-            $table->string('image')->nullable();
+            $table->string('image')->default('recipes/default.png');
+            $table->longText('ingredients')->nullable();
+            $table->longText('instructions')->nullable();
             $table->string('servings')->nullable();
             $table->string('prep_time')->nullable();
             $table->string('cook_time')->nullable();
             $table->string('calories')->nullable();
-            $table->string('difficulty')->nullable();
-            $table->longText('ingredients')->nullable();
-            $table->longText('instructions')->nullable();
-            $table->string('source_url')->unique();
             $table->timestamps();
         });
     }
