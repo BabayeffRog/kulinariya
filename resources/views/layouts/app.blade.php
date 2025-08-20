@@ -7,7 +7,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'AW-17459837374');
     </script>
 
@@ -56,328 +55,114 @@
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:image" content="@yield('og_image', asset('assets/img/og-default.jpg'))">
 
-    {{-- Sayfa xüsusi əlavə meta/css üçün stack --}}
+    {{-- Səhifəyə xüsusi əlavə meta/css üçün stack --}}
     @stack('head')
 </head>
 <body>
 <div class="preloader">
-    <button class="th-btn preloaderCls">
-        Cancel Preloader
-    </button>
+    <button class="th-btn preloaderCls">Cancel Preloader</button>
     <div class="preloader-inner" id="preloader">
         <div class="header-logo pb-2">
-            <a href="index-2.html">
-                <img alt="No1Kulinariya" class="jump" src="assets/img/logo-icon.svg"/>
+            <a href="{{ route('home') }}">
+                <img alt="No1Kulinariya" class="jump" src="{{ asset('assets/img/logo-icon.svg') }}"/>
             </a>
         </div>
         <div class="txt-loading">
-     <span class="letters-loading" data-text-preloader="K">
-      K
-     </span>
-            <span class="letters-loading" data-text-preloader="U">
-      u
-     </span>
-            <span class="letters-loading" data-text-preloader="L">
-      L
-     </span>
-            <span class="letters-loading" data-text-preloader="İ">
-      İ
-     </span>
-            <span class="letters-loading" data-text-preloader="N">
-      N
-     </span>
-            <span class="letters-loading" data-text-preloader="A">
-      A
-     </span>
-            <span class="letters-loading" data-text-preloader="R">
-      R
-     </span>
-            <span class="letters-loading" data-text-preloader="İ">
-      İ
-     </span>
-            <span class="letters-loading" data-text-preloader="Y">
-      Y
-     </span>
-            <span class="letters-loading" data-text-preloader="A">
-      A
-     </span>
+            <span class="letters-loading" data-text-preloader="K">K</span>
+            <span class="letters-loading" data-text-preloader="U">U</span>
+            <span class="letters-loading" data-text-preloader="L">L</span>
+            <span class="letters-loading" data-text-preloader="İ">İ</span>
+            <span class="letters-loading" data-text-preloader="N">N</span>
+            <span class="letters-loading" data-text-preloader="A">A</span>
+            <span class="letters-loading" data-text-preloader="R">R</span>
+            <span class="letters-loading" data-text-preloader="İ">İ</span>
+            <span class="letters-loading" data-text-preloader="Y">Y</span>
+            <span class="letters-loading" data-text-preloader="A">A</span>
+        </div>
+    </div>
+</div>
 
-        </div>
-    </div>
-</div>
-<div class="sidemenu-wrapper sidemenu-cart">
-    <div class="sidemenu-content">
-        <button class="closeButton sideMenuCls">
-            <i class="far fa-times">
-            </i>
-        </button>
-        <div class="widget woocommerce widget_shopping_cart">
-            <h3 class="widget_title">
-                Ma&gbreve;azaping cart
-            </h3>
-            <div class="widget_shopping_cart_content">
-                <ul class="woocommerce-mini-cart cart_list product_list_widget">
-                    <li class="woocommerce-mini-cart-item mini_cart_item">
-                        <a class="remove remove_from_cart_button" href="#">
-                            <i class="far fa-times">
-                            </i>
-                        </a>
-                        <a href="#">
-                            <img alt="Cart Image" src="assets/img/product/product_1_1.png"/>
-                            Dumbbells
-                        </a>
-                        <span class="quantity">
-         1 &times;
-         <span class="woocommerce-Price-amount amount">
-          <span class="woocommerce-Price-currencySymbol">
-           ₼
-          </span>
-          940.00
-         </span>
-        </span>
-                    </li>
-                    <li class="woocommerce-mini-cart-item mini_cart_item">
-                        <a class="remove remove_from_cart_button" href="#">
-                            <i class="far fa-times">
-                            </i>
-                        </a>
-                        <a href="#">
-                            <img alt="Cart Image" src="assets/img/product/product_1_2.png"/>
-                            Leather Bag
-                        </a>
-                        <span class="quantity">
-         1 &times;
-         <span class="woocommerce-Price-amount amount">
-          <span class="woocommerce-Price-currencySymbol">
-           ₼
-          </span>
-          899.00
-         </span>
-        </span>
-                    </li>
-                    <li class="woocommerce-mini-cart-item mini_cart_item">
-                        <a class="remove remove_from_cart_button" href="#">
-                            <i class="far fa-times">
-                            </i>
-                        </a>
-                        <a href="#">
-                            <img alt="Cart Image" src="assets/img/product/product_1_3.png"/>
-                            Protein Bottle
-                        </a>
-                        <span class="quantity">
-         1 &times;
-         <span class="woocommerce-Price-amount amount">
-          <span class="woocommerce-Price-currencySymbol">
-           ₼
-          </span>
-          756.00
-         </span>
-        </span>
-                    </li>
-                    <li class="woocommerce-mini-cart-item mini_cart_item">
-                        <a class="remove remove_from_cart_button" href="#">
-                            <i class="far fa-times">
-                            </i>
-                        </a>
-                        <a href="#">
-                            <img alt="Cart Image" src="assets/img/product/product_1_4.png"/>
-                            Gym Cycle
-                        </a>
-                        <span class="quantity">
-         1 &times;
-         <span class="woocommerce-Price-amount amount">
-          <span class="woocommerce-Price-currencySymbol">
-           ₼
-          </span>
-          723.00
-         </span>
-        </span>
-                    </li>
-                    <li class="woocommerce-mini-cart-item mini_cart_item">
-                        <a class="remove remove_from_cart_button" href="#">
-                            <i class="far fa-times">
-                            </i>
-                        </a>
-                        <a href="#">
-                            <img alt="Cart Image" src="assets/img/product/product_1_5.png"/>
-                            Sports Shoes
-                        </a>
-                        <span class="quantity">
-         1 &times;
-         <span class="woocommerce-Price-amount amount">
-          <span class="woocommerce-Price-currencySymbol">
-           ₼
-          </span>
-          1080.00
-         </span>
-        </span>
-                    </li>
-                </ul>
-                <p class="woocommerce-mini-cart__total total">
-                    <strong>
-                        Subtotal:
-                    </strong>
-                    <span class="woocommerce-Price-amount amount">
-        <span class="woocommerce-Price-currencySymbol">
-         ₼
-        </span>
-        4398.00
-       </span>
-                </p>
-                <p class="woocommerce-mini-cart__buttons buttons">
-                    <a class="th-btn style2 wc-forward" href="cart.html">
-                        Səbətə bax
-                    </a>
-                    <a class="th-btn style2 checkout wc-forward" href="checkout.html">
-                        &Ouml;dəni&scedil;
-                    </a>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
+{{-- ======= MENYU AĞACI: TƏMİZ, TƏHLÜKƏSİZ, REKURSİV FUNKSİYA ======= --}}
+@php
+    /**
+     * $items: Illuminate\Support\Collection<Category>
+     * $level: dərinlik (CSS üçün)
+     *
+     * Düzəlişlər:
+     * - href düz qurulur (slug varsa ondan, yoxdursa name-dən slug).
+     * - children yoxdursa boş kolleksiya kimi davranır.
+     * - HTML tam bağlanır; XSS üçün e() istifadə olunur.
+     */
+    use Illuminate\Support\Str;
+
+    $renderMenu = function ($items, $level = 1) use (&$renderMenu) {
+        if (!$items || $items->isEmpty()) return;
+
+        echo '<ul class="sub-menu" data-level="'.(int)$level.'">';
+
+        foreach ($items as $cat) {
+            $children = $cat->children ?? collect();
+            $hasChildren = $children->isNotEmpty();
+
+            $liClass = $hasChildren ? 'menu-item-has-children' : '';
+
+            // URL: əgər öz route-unuz varsa bunu uyğunlaşdırın
+            $slug = $cat->slug ?? Str::slug($cat->name ?? 'kateqoriya');
+            $url  = url('recipes/category/'.$slug);
+
+            echo '<li class="'.$liClass.'">';
+                echo '<a href="'.e($url).'">'.e($cat->name ?? 'Kateqoriya').'</a>';
+
+                if ($hasChildren) {
+                    $renderMenu($children, $level + 1);
+                }
+            echo '</li>';
+        }
+
+        echo '</ul>';
+    };
+@endphp
+{{-- ======= /MENYU AĞACI ======= --}}
+
 <div class="popup-search-box d-none d-lg-block">
-    <button class="searchClose">
-        <i class="far fa-times">
-        </i>
-    </button>
-    <form action="#">
-        <input placeholder="Yeməyə  nə axtarırsan?))" type="text"/>
-        <button type="submit">
-            <i class="fal fa-search">
-            </i>
-        </button>
+    <button class="searchClose"><i class="far fa-times"></i></button>
+    <form action="{{ route('recipes') }}" method="GET">
+        <input name="q" placeholder="Yeməyə nə axtarırsan?" type="text"/>
+        <button type="submit"><i class="fal fa-search"></i></button>
     </form>
 </div>
+
 <div class="th-menu-wrapper">
     <div class="th-menu-area text-center">
-        <button class="th-menu-toggle">
-            <i class="fal fa-times">
-            </i>
-        </button>
+        <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
         <div class="mobile-logo">
             <a href="{{ route('home') }}">
-                <img alt="No1Kulinariya" src="assets/img/logo.svg"/>
+                <img alt="No1Kulinariya" src="{{ asset('assets/img/logo.svg') }}"/>
             </a>
         </div>
+        {{-- MOBİL MENYU --}}
         <div class="th-mobile-menu">
             <ul>
-                <li class="">
-                    <a href="{{ route('home') }}">
-                        ANA SƏH&Idot;FƏ
-                    </a>
+                <li class="{{ request()->routeIs('home') ? 'active' : '' }}">
+                    <a href="{{ route('home') }}">ANA SƏHİFƏ</a>
+                </li>
 
-                </li>
+                <li><a href="{{ url('/about') }}">HAQQIMIZDA</a></li>
+
+                {{-- Reseptlər: Dinamik kateqoriya ağacı --}}
                 <li class="menu-item-has-children">
-                    <a href="#">
-                        MENYULAR
-                    </a>
-                    <ul class="sub-menu">
-                        <li>
-                            <a href="menu-grid.html">
-                                Menu Grid View
-                            </a>
-                        </li>
-                        <li>
-                            <a href="menu-list.html">
-                                Menu List View
-                            </a>
-                        </li>
-                    </ul>
+                    <a href="{{ route('recipes') }}">Reseptlər</a>
+                    @isset($menuCategories)
+                        {!! $renderMenu($menuCategories) !!}
+                    @endisset
                 </li>
-                <li>
-                    <a href="about.html">
-                        HAQQIMIZDA
-                    </a>
-                </li>
-                <li class="menu-item-has-children">
-                    <a href="#">
-                        SƏH&Idot;FƏLƏR
-                    </a>
-                    <ul class="sub-menu">
-                        <li class="menu-item-has-children">
-                            <a href="#">
-                                Ma&gbreve;aza
-                            </a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="shop.html">
-                                        Ma&gbreve;aza
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="shop-details.html">
-                                        Ma&gbreve;aza Details
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="cart.html">
-                                        Səbət Səhifəsi
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="checkout.html">
-                                        &Ouml;dəni&scedil;
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="wishlist.html">
-                                        Se&ccedil;ilənlər
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="reservation.html">
-                                Reservation
-                            </a>
-                        </li>
-                        <li>
-                            <a href="team.html">
-                                A&scedil;pazlar&inodot;m&inodot;z
-                            </a>
-                        </li>
-                        <li>
-                            <a href="team-details.html">
-                                A&scedil;paz Detallar&inodot;
-                            </a>
-                        </li>
-                        <li>
-                            <a href="gallery.html">
-                                Qalereya
-                            </a>
-                        </li>
-                        <li>
-                            <a href="faq.html">
-                                Suallar
-                            </a>
-                        </li>
-                        <li>
-                            <a href="testimonials.html">
-                                Rəylər
-                            </a>
-                        </li>
-                        <li>
-                            <a href="error.html">
-                                Səhifə Tap&inodot;lmad&inodot;
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="contact.html">
-                        Faydalı Məlumatlar
-                    </a>
-                </li>
-                <li>
-                    <a href="contact.html">
-                        ƏLAQƏ
-                    </a>
-                </li>
+
+                <li><a href="{{ url('/contact') }}">ƏLAQƏ</a></li>
             </ul>
         </div>
     </div>
 </div>
+
 <header class="th-header header-default">
     <div class="header-top d-sm-block d-none">
         <div class="container">
@@ -386,21 +171,16 @@
                     <div class="header-links">
                         <ul>
                             <li class="d-none d-xl-inline-block">
-                                <i class="far fa-location-dot">
-                                </i>
+                                <i class="far fa-location-dot"></i>
                                 28 May M/S Rus Plovoslar kilsəsinin yanı
                             </li>
                             <li class="d-none d-md-inline-block">
-                                <i class="far fa-envelope-open">
-                                </i>
-                                <a href="mailto:info@no1kulinariya.com">
-                                    info@no1kulinariya.com
-                                </a>
+                                <i class="far fa-envelope-open"></i>
+                                <a href="mailto:info@no1kulinariya.com">info@no1kulinariya.com</a>
                             </li>
                             <li class="d-none d-sm-inline-block">
-                                <i class="far fa-clock">
-                                </i>
-                                &Idot;&scedil; saatlar&inodot;: Hər Gün 09:00 - 22:00
+                                <i class="far fa-clock"></i>
+                                İş saatları: Hər Gün 09:00 - 22:00
                             </li>
                         </ul>
                     </div>
@@ -409,30 +189,15 @@
                     <div class="header-links">
                         <ul>
                             <li class="d-none d-xxl-inline-block header-contact">
-                                <i class="far fa-phone">
-                                </i>
-                                <a href="tel:994559711197">
-                                    +994 55 971 11 97
-                                </a>
+                                <i class="far fa-phone"></i>
+                                <a href="tel:994559711197">+994 55 971 11 97</a>
                             </li>
                             <li>
                                 <div class="th-social">
-                                    <a href="https://www.facebook.com/">
-                                        <i class="fab fa-facebook-f">
-                                        </i>
-                                    </a>
-                                    <a href="https://www.twitter.com/">
-                                        <i class="fab fa-tiktok">
-                                        </i>
-                                    </a>
-                                    <a href="https://www.linkedin.com/">
-                                        <i class="fab fa-instagram">
-                                        </i>
-                                    </a>
-                                    <a href="https://www.whatsapp.com/">
-                                        <i class="fab fa-whatsapp">
-                                        </i>
-                                    </a>
+                                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="https://www.tiktok.com/"><i class="fab fa-tiktok"></i></a>
+                                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
                                 </div>
                             </li>
                         </ul>
@@ -441,385 +206,156 @@
             </div>
         </div>
     </div>
+
     <div class="sticky-wrapper">
         <div class="menu-area">
             <div class="container">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto">
                         <div class="header-logo">
-                            <a href="index-2.html">
-                                <img alt="No1Kulinariya" src="assets/img/logo.svg"/>
+                            <a href="{{ route('home') }}">
+                                <img alt="No1Kulinariya" src="{{ asset('assets/img/logo.svg') }}"/>
                             </a>
                         </div>
                     </div>
+
                     <div class="col-auto">
+                        {{-- DESKTOP MENYU --}}
                         <nav class="main-menu d-none d-lg-inline-block">
                             <ul>
-                                <li class="{{ route('home') }}">
-                                    <a href="index-2.html">
-                                        ANA SƏH&Idot;FƏ
-                                    </a>
+                                <li class="{{ request()->routeIs('home') ? 'active' : '' }}">
+                                    <a href="{{ route('home') }}">ANA SƏHİFƏ</a>
                                 </li>
-                                <li>
-                                    <a href="about.html">
-                                        HAQQIMIZDA
-                                    </a>
-                                </li>
+
+                                <li><a href="{{ url('/about') }}">HAQQIMIZDA</a></li>
+
+                                {{-- Reseptlər: Dinamik kateqoriya ağacı --}}
                                 <li class="menu-item-has-children">
-                                    <a href="#">
-                                        MENYU
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <a href="menu-grid.html">
-                                                Menu grid
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="menu-list.html">
-                                                Menu List
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    <a href="{{ route('recipes') }}">Reseptlər</a>
+                                    @isset($menuCategories)
+                                        {!! $renderMenu($menuCategories) !!}
+                                    @endisset
                                 </li>
-                                <li class="menu-item-has-children">
-                                    <a href="#">
-                                        Reseptlər
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item-has-children">
-                                            <a href="#">
-                                                Ma&gbreve;aza
-                                            </a>
-                                            <ul class="sub-menu">
-                                                <li>
-                                                    <a href="shop.html">
-                                                        Ma&gbreve;aza
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop-details.html">
-                                                        Ma&gbreve;aza Details
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="cart.html">
-                                                        Səbət Səhifəsi
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="checkout.html">
-                                                        &Ouml;dəni&scedil;
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html">
-                                                        Se&ccedil;ilənlər
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="reservation.html">
-                                                Reservation
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="team.html">
-                                                A&scedil;pazlar&inodot;m&inodot;z
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="team-details.html">
-                                                A&scedil;paz Detallar&inodot;
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="gallery.html">
-                                                Qalereya
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="testimonials.html">
-                                                Rəylər
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="faq.html">
-                                                Suallar
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="error.html">
-                                                Səhifə Tap&inodot;lmad&inodot;
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="contact.html">
-                                        Faydalı Məlumatlar
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="contact.html">
-                                        ƏLAQƏ
-                                    </a>
-                                </li>
+
+                                <li><a href="{{ url('/contact') }}">ƏLAQƏ</a></li>
                             </ul>
                         </nav>
-                        <div class="header-button d-flex d-lg-none">
-                            <button class="icon-btn sideMenuToggler" type="button">
-          <span class="badge">
-           5
-          </span>
-                                <i class="fa-regular fa-cart-shopping">
-                                </i>
-                            </button>
-                            <button class="icon-btn th-menu-toggle" type="button">
-                                <i class="far fa-bars">
-                                </i>
-                            </button>
-                        </div>
                     </div>
+
                     <div class="col-auto d-none d-xl-block">
                         <div class="header-button">
                             <button class="icon-btn searchBoxToggler" type="button">
-                                <i class="far fa-search">
-                                </i>
+                                <i class="far fa-search"></i>
                             </button>
-                            <button class="icon-btn sideMenuToggler" type="button">
-          <span class="badge">
-           5
-          </span>
-                                <i class="fa-regular fa-cart-shopping">
-                                </i>
-                            </button>
-                            <a class="th-btn btn-mask" href="reservation.html">
-                                isti-isti sifariş et
-                            </a>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
         </div>
     </div>
 </header>
 
-
-
+{{-- ======= CONTENT SLOT ======= --}}
 @yield('content')
 
+<footer class="footer-wrapper footer-default overflow-hidden shape-mockup-wrap">
+    <div class="shape-mockup d-none d-xxl-block wow fadeinup" style="top: 22%; left: 0%; visibility: hidden; animation-name: none;">
+        <img src="{{ asset('assets/img/footer/footer-left.png') }}" alt="img">
+    </div>
 
-<footer class="footer-wrapper footer-layout1 space-top">
-    <div class="shape-mockup jump d-none d-xxl-block" data-left="0" data-top="0">
-        <img alt="img" src="assets/img/icon/footer-1-1.png"/>
+    <div class="shape-mockup moving d-none d-lg-block" style="top: 10%; right: 4%;">
+        <img src="{{ asset('assets/img/shape/footer-top.png') }}" alt="img">
     </div>
-    <div class="shape-mockup" data-left="0" data-top="0">
-        <img alt="img" src="assets/img/icon/footer-1-11.png"/>
-    </div>
-    <div class="shape-mockup movingX d-none d-xxl-block" data-left="40%" data-top="0">
-        <img alt="img" src="assets/img/icon/footer-1-2.png"/>
-    </div>
-    <div class="shape-mockup" data-left="40%" data-top="0">
-        <img alt="img" src="assets/img/icon/footer-1-22.png"/>
-    </div>
-    <div class="shape-mockup jump-reverse d-none d-xxl-block" data-right="0%" data-top="-5%">
-        <img alt="img" src="assets/img/icon/footer-1-3.png"/>
-    </div>
-    <div class="shape-mockup d-none d-xxl-block" data-right="0%" data-top="0">
-        <img alt="img" src="assets/img/icon/footer-1-33.png"/>
-    </div>
-    <div class="shape-mockup d-none d-xxl-block" data-bottom="6%" data-right="0%">
-        <img alt="img" src="assets/img/icon/footer-1-4.png"/>
-    </div>
-    <div class="shape-mockup d-none d-xxl-block" data-bottom="4%" data-left="0%">
-        <img alt="img" src="assets/img/icon/footer-1-5.png"/>
-    </div>
-    <div class="container">
-        <div class="footer-logo">
-            <div class="footer-border left">
-            </div>
-            <a href="{{ route('home') }}">
-                <img alt="No1Kulinariya" src="assets/img/logo-white.svg"/>
-            </a>
-            <div class="footer-border right">
+
+    <!-- Footer Top -->
+    <div class="footer-top">
+        <div class="container">
+            <div class="row gy-40 align-items-center justify-content-center">
+                <div class="col-xl-12">
+                    <div class="subscribe-box">
+                        <h2 class="footer-top_title">Let’s Talk With Us</h2>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="widget-area">
-            <div class="row justify-content-center">
-                <div class="col-xl-4 col-lg-4 col-sm-6">
+    </div>
+
+    <!-- Widget Area -->
+    <div class="widget-area">
+        <div class="container">
+            <div class="row gy-4 justify-content-center">
+                <!-- Contact Info -->
+                <div class="col-md-12 col-lg-6 col-xl-4">
+                    <div class="widget footer-widget">
+                        <h3 class="widget_title">Əlaqə</h3>
+                        <div class="icon">
+                            <img src="{{ asset('assets/img/icon/f-title-icon.png') }}" alt="icon">
+                        </div>
+                        <div class="th-widget-contact">
+                            <div class="info-box">
+                                <p class="info-box_text">
+                                    <span>Phone:</span>
+                                    <a href="tel:994559711197" class="info-box_link">+994 55 971 11 97</a>
+                                </p>
+                            </div>
+                            <div class="info-box">
+                                <p class="info-box_text">
+                                    <span>Email:</span>
+                                    <a href="mailto:info@no1kulinariya.com" class="info-box_link">info@no1kulinariya.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-12 col-lg-6 col-xl-4">
                     <div class="widget widget_nav_menu footer-widget">
-                        <h3 class="widget_title">
-                            Faydal&inodot; ke&ccedil;idlər
-                        </h3>
+                        <h3 class="widget_title">Faydalı linklər</h3>
+                        <div class="icon">
+                            <img src="{{ asset('assets/img/icon/f-title-icon.png') }}" alt="icon">
+                        </div>
                         <div class="menu-all-pages-container">
                             <ul class="menu">
-                                <li>
-                                    <a href="about.html">
-                                        Home
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="contact.html">
-                                        Tariximiz
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="contact.html">
-                                        Xidmətlərimiz
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="blog.html">
-                                        Sevimli məkan
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="contact.html">
-                                        Bizimlə əlaqə
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="contact.html">
-                                        Məxfilik siyasəti
-                                    </a>
-                                </li>
+                                <li><a href="{{ url('/recipes') }}">Yemek Reseptleri</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-sm-6">
-                    <div class="widget widget_info footer-widget">
-                        <div class="opening-time">
-                            <div class="event-info-mask" data-mask-src="assets/img/bg/footer-1-open-border.png">
-                            </div>
-                            <div class="content-wrap">
-                                <div class="icon">
-                                    <i class="fa-light fa-clock">
-                                    </i>
-                                </div>
-                                <p class="top-text">
-                                    Haz&inodot;rda a&ccedil;&inodot;&gbreve;&inodot;q!
-                                </p>
-                                <p class="opening-text">
-                                    &Idot;&scedil; saatlar&inodot;: 8:00AM To 10:00PM
-                                </p>
-                                <p class="opening-text">
-                                    &Idot;&scedil; saatlar&inodot;: 8:00AM To 10:00PM
-                                </p>
-                            </div>
-                        </div>
-                        <div class="th-social">
-                            <a href="https://www.facebook.com/">
-                                <i class="fab fa-facebook-f">
-                                </i>
-                            </a>
-                            <a href="https://www.twitter.com/">
-                                <i class="fab fa-twitter">
-                                </i>
-                            </a>
-                            <a href="https://www.linkedin.com/">
-                                <i class="fab fa-linkedin-in">
-                                </i>
-                            </a>
-                            <a href="https://www.whatsapp.com/">
-                                <i class="fab fa-whatsapp">
-                                </i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-sm-6">
-                    <div class="widget widget_nav_menu footer-widget favorite-menu">
-                        <h3 class="widget_title">
-                            Sevimli menyular
-                        </h3>
-                        <div class="menu-all-pages-container">
-                            <ul class="menu">
-                                <li>
-                                    <a href="contact.html">
-                                        Burgers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="contact.html">
-                                        X&inodot;rt&inodot;ldayan dadlar
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="contact.html">
-                                        Səhər yeməyi menyusu
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="contact.html">
-                                        Desertlər
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="contact.html">
-                                        U&scedil;aq menyular&inodot;
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="contact.html">
-                                        &Idot;&ccedil;kilər
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </div> <!-- widget-area -->
+
+    <!-- Copyright -->
     <div class="copyright-wrap">
         <div class="container">
-            <div class="row gy-3 align-items-center">
-                <div class="col-lg-6">
+            <div class="copy-right-content">
+                <div class="copyright-text-wrap">
                     <p class="copyright-text">
-                        M&uuml;əllif h&uuml;quqlar&inodot;
-                        <i class="fal fa-copyright">
-                        </i>
-                        2025
-                        <a href="index-2.html">
-                            No1Kulinariya
-                        </a>
-                        B&uuml;t&uuml;n h&uuml;quqlar qorunur.
+                        <i class="fal fa-copyright"></i>
+                        <a href="{{ route('home') }}">No1Kulinariya</a>. All Rights Reserved.
                     </p>
                 </div>
-                <div class="col-lg-6 text-center text-lg-end">
-                    <div class="footer-links">
-                        <ul>
-                            <li>
-                                <a href="about.html">
-                                    Məxfilik siyasəti
-                                </a>
-                            </li>
-                            <li>
-                                <a href="about.html">
-                                    &Scedil;ərtlər və qaydalar
-                                </a>
-                            </li>
-                            <li>
-                                <a href="about.html">
-                                    Dəstək siyasəti
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="footer-bottom-logo">
+                    <a href="{{ route('home') }}">
+                        <img src="{{ asset('assets/img/logo.svg') }}" alt="img">
+                    </a>
+                </div>
+                <div class="footer-card">
+                    <img src="{{ asset('assets/img/icon/f-card.png') }}" alt="img">
                 </div>
             </div>
         </div>
     </div>
 </footer>
+
 <div class="scroll-top">
-    <svg class="progress-circle svg-content" height="100%" viewbox="-1 -1 102 102" width="100%">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
-        </path>
+    <svg class="progress-circle svg-content" height="100%" viewBox="-1 -1 102 102" width="100%">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
     </svg>
 </div>
+
 <script src="{{ asset('assets/js/vendor/jquery-3.7.1.min.js') }}"></script>
 <script src="{{ asset('assets/js/app.min.js') }}"></script>
 <script src="{{ asset('assets/js/gsap.min.js') }}"></script>
@@ -827,5 +363,6 @@
 <script src="{{ asset('assets/js/wow.min.js') }}"></script>
 <script src="{{ asset('assets/js/main.js') }}"></script>
 
+@stack('scripts')
 </body>
 </html>

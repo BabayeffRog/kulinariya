@@ -103,818 +103,161 @@
         </div>
     </div>
 </section>
+
+
 <section class="food-sec-1 space bg-smoke overflow-hidden">
     <div class="container">
         <div class="row gy-40">
             <div class="title-area text-center mb-60">
-      <span class="sub-title text-anime-style-1">
-       Fast foodlar&inodot;m&inodot;z
-      </span>
-                <h2 class="sec-title text-anime-style-2">
-                    Dadl&inodot;
-                    <span class="text-theme">
-        yeməklərimiz
-       </span>
+                <span class="sub-title text-anime-style-1" >Dadlı vitrinimiz</span>
+                <h2 class="sec-title text-anime-style-2" style="color:red;">
+                    İsti-İsti <span class="text-theme"> Hal Hazırda</span>
                 </h2>
-                <img alt="img" class="img-anime-style-1" src="assets/img/icon/title-shape.png"/>
+                <img class="img-anime-style-1" src="{{ asset('assets/img/icon/title-shape.png') }}" alt="img">
             </div>
         </div>
+
+        @php $delay = 0.2; @endphp
+
         <div class="row gy-30">
-            <div class="col-xl-3 col-lg-6 col-md-6">
-                <div class="food-card-1 wow fadeinleft" data-wow-delay=".2s">
-                    <div class="thumb">
-                        <div class="food-mask" data-mask-src="assets/img/bg/menu-1-msk-bg.png">
+            @forelse($products as $product)
+                <div class="col-xl-3 col-lg-6 col-md-6">
+                    <div class="food-card-1 wow fadeinleft" data-wow-delay="{{ number_format($delay, 1) }}s">
+                        <div class="thumb">
+                            <div class="food-mask" data-mask-src="{{ asset('assets/img/bg/menu-1-msk-bg.png') }}"></div>
+
+                            <img
+                                src="{{ $product->image_url ? asset($product->image_url) : asset('assets/img/placeholder.png') }}"
+                                alt="{{ $product->name }}">
+
+                            <div class="actions">
+                                <a class="icon-btn"
+                                   href="{{ route('product.show', $product->slug) }}" title="Sifariş et">
+                                    <i class="far fa-cart-plus"></i>
+                                </a>
+                                <a class="icon-btn"
+                                   href="{{ route('product.show', $product->slug) }}" title="Bəyəndim">
+                                    <i class="far fa-heart"></i>
+                                </a>
+                            </div>
                         </div>
-                        <img alt="Image" src="assets/img/food/food-1-1.png"/>
-                        <div class="actions">
-                            <a class="icon-btn" href="{{ route('home') }}">
-                                <i class="far fa-cart-plus">
-                                </i>
-                            </a>
-                            <a class="icon-btn" href="{{ route('home') }}">
-                                <i class="far fa-heart">
-                                </i>
-                            </a>
+
+                        <div class="content">
+                            <h4 class="price">₼{{ number_format($product->price, 2) }}</h4>
+
+                            <h4 class="box-title">
+                                <a href="{{ route('product.show', $product->slug ?? $product->id) }}">
+                                    {{ $product->name }}
+                                </a>
+                            </h4>
+
+                            <p class="box-text">
+                                {{ \Illuminate\Support\Str::limit($product->short_description ?? $product->description, 90) }}
+                            </p>
                         </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="price">
-                            ₼26.00
-                        </h4>
-                        <h4 class="box-title">
-                            <a href="{{ route('home') }}">
-                                Ləzzətli Qara Burger
-                            </a>
-                        </h4>
-                        <p class="box-text">
-                            At the heart of our kitchen are bold flavors, high-quality ingredients
-                        </p>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6">
-                <div class="food-card-1 wow fadeinleft" data-wow-delay=".4s">
-                    <div class="thumb">
-                        <div class="food-mask" data-mask-src="assets/img/bg/menu-1-msk-bg.png">
-                        </div>
-                        <img alt="Image" src="assets/img/food/food-1-2.png"/>
-                        <div class="actions">
-                            <a class="icon-btn" href="cart.html">
-                                <i class="far fa-cart-plus">
-                                </i>
-                            </a>
-                            <a class="icon-btn" href="wishlist.html">
-                                <i class="far fa-heart">
-                                </i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="price">
-                            ₼20.00
-                        </h4>
-                        <h4 class="box-title">
-                            <a href="shop-details.html">
-                                Ac&inodot;l&inodot; Mal Əti Burgeri
-                            </a>
-                        </h4>
-                        <p class="box-text">
-                            At the heart of our kitchen are bold flavors, high-quality ingredients
-                        </p>
+
+                @php $delay += 0.1; @endphp
+            @empty
+                <div class="col-12">
+                    <div class="text-center py-5">
+                        <p class="mb-1">Hazırda vitrin üçün məhsul yoxdur.</p>
+                        <a href="{{ route('products') }}" class="btn btn-primary mt-2">Bütün məhsullara bax</a>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6">
-                <div class="food-card-1 wow fadeinright" data-wow-delay=".6s">
-                    <div class="thumb">
-                        <div class="food-mask" data-mask-src="assets/img/bg/menu-1-msk-bg.png">
-                        </div>
-                        <img alt="Image" src="assets/img/food/food-1-3.png"/>
-                        <div class="actions">
-                            <a class="icon-btn" href="cart.html">
-                                <i class="far fa-cart-plus">
-                                </i>
-                            </a>
-                            <a class="icon-btn" href="wishlist.html">
-                                <i class="far fa-heart">
-                                </i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="price">
-                            ₼16.00
-                        </h4>
-                        <h4 class="box-title">
-                            <a href="shop-details.html">
-                                Q&inodot;z&inodot;l X&inodot;rt-x&inodot;rt Kartof
-                            </a>
-                        </h4>
-                        <p class="box-text">
-                            At the heart of our kitchen are bold flavors, high-quality ingredients
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6">
-                <div class="food-card-1 wow fadeinright" data-wow-delay=".8s">
-                    <div class="thumb">
-                        <div class="food-mask" data-mask-src="assets/img/bg/menu-1-msk-bg.png">
-                        </div>
-                        <img alt="Image" src="assets/img/food/food-1-4.png"/>
-                        <div class="actions">
-                            <a class="icon-btn" href="cart.html">
-                                <i class="far fa-cart-plus">
-                                </i>
-                            </a>
-                            <a class="icon-btn" href="wishlist.html">
-                                <i class="far fa-heart">
-                                </i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h4 class="price">
-                            ₼36.00
-                        </h4>
-                        <h4 class="box-title">
-                            <a href="shop-details.html">
-                                Tur&scedil;umsu Qril Sendvi&ccedil;
-                            </a>
-                        </h4>
-                        <p class="box-text">
-                            At the heart of our kitchen are bold flavors, high-quality ingredients
-                        </p>
-                    </div>
-                </div>
-            </div>
+            @endforelse
         </div>
     </div>
 </section>
+
+
 <div class="menu-sec1 space-top overflow-hidden" id="menu-sec">
     <div class="container">
         <div class="title-area text-center mb-40">
-     <span class="sub-title text-anime-style-1">
-      Menyu kart&inodot;
-     </span>
+            <span class="sub-title text-anime-style-1">
+                İçkilər
+            </span>
             <h2 class="sec-title text-anime-style-2">
-                Fast foodlar&inodot;m&inodot;z
-                <span class="text-theme">
-       Menyu kart&inodot;
-      </span>
+                Barlik By
+                <span class="text-theme"> Malik</span>
             </h2>
-            <img alt="img" class="img-anime-style-1" src="assets/img/icon/title-shape.png"/>
+            <img alt="img" class="img-anime-style-1" src="{{ asset('assets/img/icon/barlik-line.png') }}"/>
         </div>
+
         <div class="row gy-4 justify-content-center">
             <div class="col-lg-3">
                 <div class="menu-img-1-1 gsap-scroll-float-down2">
-                    <img alt="img" src="assets/img/menu/menu-1-1.jpg"/>
+                    <img alt="img" src="{{ asset('assets/img/menu/barlik.png') }}"/>
                 </div>
             </div>
+
             <div class="col-lg-6">
                 <div class="menu-1-content-wrap ps-xl-3 pe-xl-5">
-                    <ul class="nav nav-tabs wow fadeinup" id="myTab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button aria-controls="event-creating" aria-selected="true" class="nav-link active" data-bs-target="#event-creating" data-bs-toggle="tab" id="event-creating-tab" role="tab" type="button">
-                                Tədbir menyusu
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button aria-controls="meal-plans" aria-selected="false" class="nav-link" data-bs-target="#meal-plans" data-bs-toggle="tab" id="meal-plans-tab" role="tab" type="button">
-                                Qidalanma planlar&inodot;
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button aria-controls="food-delivery" aria-selected="false" class="nav-link" data-bs-target="#food-delivery" data-bs-toggle="tab" id="food-delivery-tab" role="tab" type="button">
-                                &Ccedil;atd&inodot;r&inodot;lma
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button aria-controls="diet-plans" aria-selected="false" class="nav-link" data-bs-target="#diet-plans" data-bs-toggle="tab" id="diet-plans-tab" role="tab" type="button">
-                                Pəhriz planlar&inodot;
-                            </button>
-                        </li>
+
+                    {{-- Tabs: alt kateqoriyalar --}}
+                    <ul class="nav nav-tabs wow fadeinup" id="drinkTabs" role="tablist">
+                        @foreach($drinks->children as $key => $subcategory)
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link {{ $key==0 ? 'active' : '' }}"
+                                        id="tab-{{ $subcategory->id }}"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#cat-{{ $subcategory->id }}"
+                                        type="button" role="tab">
+                                    {{ $subcategory->name }}
+                                </button>
+                            </li>
+                        @endforeach
                     </ul>
-                    <div class="tab-content" id="myTabContent">
-                        <div aria-labelledby="event-creating-tab" class="tab-pane fade show active" id="event-creating" role="tabpanel">
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".2s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-1.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                &Scedil;&uuml;y&uuml;d souslu qril somon
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
+
+                    {{-- Məhsullar --}}
+                    <div class="tab-content" id="drinkTabContent">
+                        @foreach($drinks->children as $key => $subcategory)
+                            <div class="tab-pane fade {{ $key==0 ? 'show active' : '' }}"
+                                 id="cat-{{ $subcategory->id }}" role="tabpanel">
+
+                                @forelse($subcategory->products as $product)
+                                    <div class="menu-item-1 wow fadeinup" data-wow-delay=".{{ $loop->iteration+2 }}s">
+                                        <div class="thumb global-img" data-mask-src="{{ asset('assets/img/bg/menu-1-msk-bg.jpg') }}">
+                                            <img alt="{{ $product->name }}"
+                                                 src="{{ $product->images && isset($product->images[0])
+                                                        ? asset('storage/'.$product->images[0])
+                                                        : asset('assets/img/food/placeholder.png') }}">
+                                        </div>
+                                        <div class="content">
+                                            <div class="left">
+                                                <h3 class="box-title">
+                                                    <a href="{{ route('products.show', $product->slug) }}">
+                                                        {{ $product->name }}
+                                                    </a>
+                                                </h3>
+                                                <p class="box-text">{{ $product->description ?? '' }}</p>
+                                            </div>
+                                            <div class="right">
+                                                <h4 class="price"><span>₼</span> {{ $product->price }}</h4>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            40
-                                        </h4>
-                                    </div>
-                                </div>
+                                @empty
+                                    <p class="text-muted">Bu kateqoriyada məhsul yoxdur.</p>
+                                @endforelse
+
                             </div>
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".3s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-2.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                Tərəvəzli rostbif
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            60
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".4s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-3.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                Marrake&scedil; veqan k&ouml;ri
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            30
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".5s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-4.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                Ac&inodot;l&inodot; veqan kartof k&ouml;risi
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            50
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".6s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-5.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                Kremli almal&inodot; piroq
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            80
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".7s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-6.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                Frans&inodot;z so&gbreve;an &scedil;orbas&inodot;
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            28
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div aria-labelledby="meal-plans-tab" class="tab-pane fade" id="meal-plans" role="tabpanel">
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".2s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-1.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                &Scedil;&uuml;y&uuml;d souslu qril somon
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            40
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".3s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-2.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                Tərəvəzli rostbif
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            60
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".4s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-3.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                Marrake&scedil; veqan k&ouml;ri
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            30
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".5s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-4.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                Ac&inodot;l&inodot; veqan kartof k&ouml;risi
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            50
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".6s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-5.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                Kremli almal&inodot; piroq
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            80
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".7s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-6.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                Frans&inodot;z so&gbreve;an &scedil;orbas&inodot;
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            28
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div aria-labelledby="food-delivery-tab" class="tab-pane fade" id="food-delivery" role="tabpanel">
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".2s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-1.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                &Scedil;&uuml;y&uuml;d souslu qril somon
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            40
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".3s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-2.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                Tərəvəzli rostbif
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            60
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".4s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-3.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                Marrake&scedil; veqan k&ouml;ri
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            30
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".5s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-4.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                Ac&inodot;l&inodot; veqan kartof k&ouml;risi
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            50
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".6s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-5.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                Kremli almal&inodot; piroq
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            80
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".7s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-6.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                Frans&inodot;z so&gbreve;an &scedil;orbas&inodot;
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            28
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div aria-labelledby="diet-plans-tab" class="tab-pane fade" id="diet-plans" role="tabpanel">
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".2s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-1.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                &Scedil;&uuml;y&uuml;d souslu qril somon
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            40
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".3s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-2.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                Tərəvəzli rostbif
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            60
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".4s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-3.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                Marrake&scedil; veqan k&ouml;ri
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            30
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".5s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-4.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                Ac&inodot;l&inodot; veqan kartof k&ouml;risi
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            50
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".6s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-5.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                Kremli almal&inodot; piroq
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            80
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menu-item-1 wow fadeinup" data-wow-delay=".7s">
-                                <div class="thumb global-img" data-mask-src="assets/img/bg/menu-1-msk-bg.jpg">
-                                    <img alt="img" src="assets/img/menu/menu-1-item-1-6.jpg"/>
-                                </div>
-                                <div class="content">
-                                    <div class="left">
-                                        <h3 class="box-title">
-                                            <a href="shop-details.html">
-                                                Frans&inodot;z so&gbreve;an &scedil;orbas&inodot;
-                                            </a>
-                                        </h3>
-                                        <p class="box-text">
-                                            &Scedil;irinlə&scedil;dirilmi&scedil; yersəməni, tr&uuml;f
-                                        </p>
-                                    </div>
-                                    <div class="right">
-                                        <h4 class="price">
-             <span>
-              ₼
-             </span>
-                                            28
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-3">
                 <div class="menu-img-1-2 gsap-scroll-float-up">
-                    <img alt="img" src="assets/img/menu/menu-1-2.jpg"/>
+                    <img alt="img" src="{{ asset('assets/img/menu/menu-1-2.jpg') }}"/>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
 <div class="gallery-sec-1 space bg-smoke overflow-hidden">
     <div class="container">
         <div class="title-area secTitle-gsap-anim-1 text-center mb-60">
@@ -1009,7 +352,7 @@
       Xəbərlər və bloq
      </span>
             <h2 class="sec-title text-anime-style-2">
-                Ən son xəbərlər və
+                Ən son Reseptlər və
                 <span class="text-theme">
        bloqlar
       </span>
@@ -1017,203 +360,79 @@
             <img alt="img" class="img-anime-style-1" src="assets/img/icon/title-shape.png"/>
         </div>
         <div class="slider-area">
-            <div class="swiper th-slider" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"1"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"}}, "autoHeight": "true"}' id="blogSlider1">
+            <div class="swiper th-slider"
+                 id="recipeSlider1"
+                 data-slider-options='{
+            "breakpoints":{
+                "0":{"slidesPerView":1},
+                "576":{"slidesPerView":1},
+                "768":{"slidesPerView":1},
+                "992":{"slidesPerView":2},
+                "1200":{"slidesPerView":3}
+            },
+            "autoHeight": true
+         }'>
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="blog-card">
-                            <div class="blog-img">
-                                <a href="blog-details.html">
-                                    <img alt="blog image" src="assets/img/blog/blog_1_1.jpg"/>
-                                </a>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-meta">
-                                    <a class="author" href="blog.html">
-                                        <i class="fal fa-user">
-                                        </i>
-                                        Barlik By Malik
-                                    </a>
-                                    <a href="blog.html">
-                                        <i class="fal fa-calendar">
-                                        </i>
-                                        12 April, 2025
+                    @forelse($recipes as $r)
+                        @php
+                            $img = $r->image
+                                ? (\Illuminate\Support\Str::startsWith($r->image, ['http://','https://'])
+                                    ? $r->image
+                                    : \Illuminate\Support\Facades\Storage::url($r->image))
+                                : asset('assets/img/food/placeholder.jpg');
+                            $author = $r->author ?: 'No1 Kulinariya';
+                        @endphp
+
+                        <div class="swiper-slide">
+                            <div class="blog-card">
+                                <div class="blog-img">
+                                    <a href="{{ route('recipes.show', $r->slug) }}">
+                                        <img src="{{ $img }}" alt="{{ $r->title }}">
                                     </a>
                                 </div>
-                                <h3 class="box-title">
-                                    <a href="blog-details.html">
-                                        Fast food do&gbreve;rudanm&inodot; daha sa&gbreve;lam olur? Bilməli olduqlar&inodot;n&inodot;z
-                                    </a>
-                                </h3>
-                                <a class="th-btn btn-mask" href="blog-details.html">
-                                    Daha &ccedil;ox oxu
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="blog-card">
-                            <div class="blog-img">
-                                <a href="blog-details.html">
-                                    <img alt="blog image" src="assets/img/blog/blog_1_2.jpg"/>
-                                </a>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-meta">
-                                    <a class="author" href="blog.html">
-                                        <i class="fal fa-user">
-                                        </i>
-                                        Barlik By Malik
-                                    </a>
-                                    <a href="blog.html">
-                                        <i class="fal fa-calendar">
-                                        </i>
-                                        16 March, 2025
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <a class="author" href="{{ route('home') }}">
+                                            <i class="fal fa-user"></i> {{ $author }}
+                                        </a>
+                                        <span>
+                                    <i class="fal fa-calendar"></i>
+                                    {{ $r->created_at?->format('d M, Y') }}
+                                </span>
+                                    </div>
+
+                                    <h3 class="box-title">
+                                        <a href="{{ route('recipes.show', $r->slug) }}">
+                                            {{ \Illuminate\Support\Str::limit($r->title, 80) }}
+                                        </a>
+                                    </h3>
+
+                                    <a class="th-btn btn-mask" href="{{ route('recipes.show', $r->slug) }}">
+                                        Ətraflı oxu
                                     </a>
                                 </div>
-                                <h3 class="box-title">
-                                    <a href="blog-details.html">
-                                        Fast food daha sa&gbreve;lam olurmu? Biz nələri edirik
-                                    </a>
-                                </h3>
-                                <a class="th-btn btn-mask" href="blog-details.html">
-                                    Daha &ccedil;ox oxu
-                                </a>
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="blog-card">
-                            <div class="blog-img">
-                                <a href="blog-details.html">
-                                    <img alt="blog image" src="assets/img/blog/blog_1_3.jpg"/>
-                                </a>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-meta">
-                                    <a class="author" href="blog.html">
-                                        <i class="fal fa-user">
-                                        </i>
-                                        Barlik By Malik
-                                    </a>
-                                    <a href="blog.html">
-                                        <i class="fal fa-calendar">
-                                        </i>
-                                        17 June, 2025
-                                    </a>
+                    @empty
+                        <div class="swiper-slide">
+                            <div class="blog-card">
+                                <div class="blog-content">
+                                    <h3 class="box-title mb-0">Hələlik resept yoxdur</h3>
                                 </div>
-                                <h3 class="box-title">
-                                    <a href="blog-details.html">
-                                        Sa&gbreve;lam fast food: mif, yoxsa reall&inodot;q? Həqiqət budur
-                                    </a>
-                                </h3>
-                                <a class="th-btn btn-mask" href="blog-details.html">
-                                    Daha &ccedil;ox oxu
-                                </a>
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="blog-card">
-                            <div class="blog-img">
-                                <a href="blog-details.html">
-                                    <img alt="blog image" src="assets/img/blog/blog_1_1.jpg"/>
-                                </a>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-meta">
-                                    <a class="author" href="blog.html">
-                                        <i class="fal fa-user">
-                                        </i>
-                                        Barlik By Malik
-                                    </a>
-                                    <a href="blog.html">
-                                        <i class="fal fa-calendar">
-                                        </i>
-                                        12 April, 2025
-                                    </a>
-                                </div>
-                                <h3 class="box-title">
-                                    <a href="blog-details.html">
-                                        Fast food do&gbreve;rudanm&inodot; daha sa&gbreve;lam olur? Bilməli olduqlar&inodot;n&inodot;z
-                                    </a>
-                                </h3>
-                                <a class="th-btn btn-mask" href="blog-details.html">
-                                    Daha &ccedil;ox oxu
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="blog-card">
-                            <div class="blog-img">
-                                <a href="blog-details.html">
-                                    <img alt="blog image" src="assets/img/blog/blog_1_2.jpg"/>
-                                </a>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-meta">
-                                    <a class="author" href="blog.html">
-                                        <i class="fal fa-user">
-                                        </i>
-                                        Barlik By Malik
-                                    </a>
-                                    <a href="blog.html">
-                                        <i class="fal fa-calendar">
-                                        </i>
-                                        17 June, 2025
-                                    </a>
-                                </div>
-                                <h3 class="box-title">
-                                    <a href="blog-details.html">
-                                        Fast food daha sa&gbreve;lam olurmu? Biz nələri edirik
-                                    </a>
-                                </h3>
-                                <a class="th-btn btn-mask" href="blog-details.html">
-                                    Daha &ccedil;ox oxu
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="blog-card">
-                            <div class="blog-img">
-                                <a href="blog-details.html">
-                                    <img alt="blog image" src="assets/img/blog/blog_1_3.jpg"/>
-                                </a>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-meta">
-                                    <a class="author" href="blog.html">
-                                        <i class="fal fa-user">
-                                        </i>
-                                        Barlik By Malik
-                                    </a>
-                                    <a href="blog.html">
-                                        <i class="fal fa-calendar">
-                                        </i>
-                                        12 April, 2025
-                                    </a>
-                                </div>
-                                <h3 class="box-title">
-                                    <a href="blog-details.html">
-                                        Sa&gbreve;lam fast food: mif, yoxsa reall&inodot;q? Həqiqət budur
-                                    </a>
-                                </h3>
-                                <a class="th-btn btn-mask" href="blog-details.html">
-                                    Daha &ccedil;ox oxu
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforelse
                 </div>
             </div>
-            <button class="slider-arrow slider-prev" data-slider-prev="#blogSlider1">
-                <img alt="" src="assets/img/icon/left-arrow.svg"/>
+
+            <button class="slider-arrow slider-prev" data-slider-prev="#recipeSlider1">
+                <img src="{{ asset('assets/img/icon/left-arrow.svg') }}" alt="prev">
             </button>
-            <button class="slider-arrow slider-next" data-slider-next="#blogSlider1">
-                <img alt="" src="assets/img/icon/right-arrow.svg"/>
+            <button class="slider-arrow slider-next" data-slider-next="#recipeSlider1">
+                <img src="{{ asset('assets/img/icon/right-arrow.svg') }}" alt="next">
             </button>
         </div>
+
     </div>
 </section>
 <section class="cta-area-1 bg-theme4 overflow-hidden">

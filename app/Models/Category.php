@@ -24,4 +24,13 @@ class Category extends Model
     {
         return $this->belongsTo(Category::class, 'parent_id');
     }
+
+    public function recipes()
+    {
+        return $this->belongsToMany(Recipe::class);
+    }
+    public function products()
+    {
+        return $this->belongsToMany(Product::class);
+    }
 }
